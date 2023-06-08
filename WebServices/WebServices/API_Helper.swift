@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum DogAPI_Errors: Error {
 
@@ -16,6 +17,7 @@ enum DogAPI_Errors: Error {
 class DogAPI_Helper {
     
     private static var baseURLString =  "https://dog.ceo/api/breeds/list/all"
+    private static var baseURLStringData =  "https://dog.ceo/api/breeds/image/random"
     
     public static func fetch(urlString:String) async throws -> Data {
         
@@ -44,5 +46,38 @@ class DogAPI_Helper {
             
                 fatalError("\(error)")
         }
+    }
+    
+    public static func fetchDogData() async throws -> DogData {
+        
+        do
+        {
+            let data = try await fetch(urlString: baseURLStringData)
+            // print(data)
+            let decoder = JSONDecoder()
+            
+            let dogData = try decoder.decode(DogData.self, from: data)
+            
+            return dogData
+            
+        } catch {
+            
+            fatalError("\(error)")
+        }
+    }
+        
+    
+    public static func fetchDogImageData(urlString : String) async throws -> UIImage? {
+        do
+        {
+            let data = try await fetch(urlString : urlString)
+            let imageData = UIImage(data: data)
+            return imageData
+            
+        } catch {
+            
+                fatalError("\(error)")
+        }
+        
     }
 }

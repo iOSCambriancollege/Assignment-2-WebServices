@@ -19,7 +19,8 @@ class DogAPITableViewController: UITableViewController {
             do {
                 let API_Response = try await DogAPI_Helper.fetchDogs()
                 dogList.message = API_Response.message
-                print(dogList)
+                tableView.reloadData()
+              //  print(dogList.message)
             }
             catch {
                 preconditionFailure("Error Occured \(error)")
@@ -43,22 +44,24 @@ class DogAPITableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        //print(dogList.message.count)
         return dogList.message.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-        cell.textLabel!.text = dogList.message.randomElement()?.key
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mycell", for: indexPath) as! DogCellView
+        
+        tableView.rowHeight = 70
+     
+        cell.Breed.text = Array(dogList.message)[indexPath.row].key
+        
+        if(Array(dogList.message)[indexPath.row].value.count > 0)
+        {
+            let subBreed:String =  Array(dogList.message)[indexPath.row].value[0]
+            cell.SubBreed.text =  subBreed
+        }
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath:IndexPath)-> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dogviewCell", for: indexPath)
-        cell.textLabel!.text = dogList.message.c//keys[9].lowercased()
     }
     
 
@@ -97,14 +100,18 @@ class DogAPITableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        let dst = segue.destination as! DogDetails
+        let breed = Array(dogList.message)[tableView.indexPathForSelectedRow!.row].key
+        dst.currentBreed = breed
     }
-    */
+    
 
 }

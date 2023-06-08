@@ -11,11 +11,27 @@ struct Dogs: Codable {
     var message:[String:[String]]
     var status:String
     
+    
     init() {
         self.message = ["":[""]]
         self.status = ""
     }
 }
+
+struct DogData : Codable {
+    var message : String
+    var status :String
+    
+    
+    
+    init() {
+        self.message = ""
+        self.status = ""
+       
+    }
+}
+
+
 
 
 

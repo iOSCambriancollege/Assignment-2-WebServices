@@ -15,6 +15,8 @@
 		041C14C82A2E803F00DCFC39 /* DogAPITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C14C72A2E803F00DCFC39 /* DogAPITableViewController.swift */; };
 		041C14CA2A2E80AD00DCFC39 /* API_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C14C92A2E80AD00DCFC39 /* API_Helper.swift */; };
 		041C14CC2A2EA4AE00DCFC39 /* DogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C14CB2A2EA4AE00DCFC39 /* DogList.swift */; };
+		041C14D02A313F3D00DCFC39 /* DogCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C14CF2A313F3D00DCFC39 /* DogCellView.swift */; };
+		041C14D22A31525C00DCFC39 /* DogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041C14D12A31525C00DCFC39 /* DogDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		041C14C72A2E803F00DCFC39 /* DogAPITableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPITableViewController.swift; sourceTree = "<group>"; };
 		041C14C92A2E80AD00DCFC39 /* API_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Helper.swift; sourceTree = "<group>"; };
 		041C14CB2A2EA4AE00DCFC39 /* DogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogList.swift; sourceTree = "<group>"; };
+		041C14CF2A313F3D00DCFC39 /* DogCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCellView.swift; sourceTree = "<group>"; };
+		041C14D12A31525C00DCFC39 /* DogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +67,14 @@
 				041C14B12A2E5DF600DCFC39 /* AppDelegate.swift */,
 				041C14B32A2E5DF600DCFC39 /* SceneDelegate.swift */,
 				041C14B72A2E5DF600DCFC39 /* Main.storyboard */,
+				041C14CF2A313F3D00DCFC39 /* DogCellView.swift */,
 				041C14BA2A2E5DFA00DCFC39 /* Assets.xcassets */,
 				041C14BC2A2E5DFA00DCFC39 /* LaunchScreen.storyboard */,
 				041C14BF2A2E5DFA00DCFC39 /* Info.plist */,
 				041C14C72A2E803F00DCFC39 /* DogAPITableViewController.swift */,
 				041C14C92A2E80AD00DCFC39 /* API_Helper.swift */,
 				041C14CB2A2EA4AE00DCFC39 /* DogList.swift */,
+				041C14D12A31525C00DCFC39 /* DogDetails.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -147,6 +153,8 @@
 				041C14CC2A2EA4AE00DCFC39 /* DogList.swift in Sources */,
 				041C14CA2A2E80AD00DCFC39 /* API_Helper.swift in Sources */,
 				041C14B22A2E5DF600DCFC39 /* AppDelegate.swift in Sources */,
+				041C14D02A313F3D00DCFC39 /* DogCellView.swift in Sources */,
+				041C14D22A31525C00DCFC39 /* DogDetails.swift in Sources */,
 				041C14B42A2E5DF600DCFC39 /* SceneDelegate.swift in Sources */,
 				041C14C82A2E803F00DCFC39 /* DogAPITableViewController.swift in Sources */,
 			);
